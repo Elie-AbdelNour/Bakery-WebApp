@@ -1,0 +1,210 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  min-height: 100vh;
+}
+
+.driver-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+  color: #fff;
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.driver-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: "Georgia", serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.driver-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.driver-header-right span {
+  font-size: 1rem;
+  color: #e3f2fd;
+  font-weight: 500;
+  background: rgba(227, 242, 253, 0.15);
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+}
+
+.driver-header-right button {
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #d84315 0%, #bf360c 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(216, 67, 21, 0.3);
+}
+
+.driver-header-right button:hover {
+  background: linear-gradient(135deg, #bf360c 0%, #d84315 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(216, 67, 21, 0.4);
+}
+
+.driver-main {
+  margin-top: 5rem;
+  padding: 2.5rem 3rem 3rem;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.driver-section {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(21, 101, 192, 0.15);
+  border: 2px solid rgba(21, 101, 192, 0.1);
+}
+
+.driver-section h2 {
+  font-size: 2rem;
+  color: #0d47a1;
+  font-family: "Georgia", serif;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.message {
+  min-height: 30px;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.message.success {
+  background: linear-gradient(135deg, #66bb6a 0%, #388e3c 100%);
+  color: white;
+  box-shadow: 0 3px 10px rgba(56, 142, 60, 0.3);
+}
+
+.message.error {
+  background: linear-gradient(135deg, #ef5350 0%, #c62828 100%);
+  color: white;
+  box-shadow: 0 3px 10px rgba(198, 40, 40, 0.3);
+}
+
+.message.info {
+  background: linear-gradient(135deg, #42a5f5 0%, #1976d2 100%);
+  color: white;
+  box-shadow: 0 3px 10px rgba(25, 118, 210, 0.3);
+}
+
+.driver-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(21, 101, 192, 0.12);
+}
+
+.driver-table th,
+.driver-table td {
+  padding: 1rem 1.2rem;
+  font-size: 0.95rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(21, 101, 192, 0.12);
+}
+
+.driver-table th {
+  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.driver-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.driver-table tbody tr:hover {
+  background: rgba(187, 222, 251, 0.3);
+}
+
+.driver-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.driver-table select {
+  padding: 0.6rem;
+  border: 2px solid #bbdefb;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.driver-table select:focus {
+  outline: none;
+  border-color: #1565c0;
+  box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.1);
+}
+
+.driver-table button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #66bb6a 0%, #388e3c 100%);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(56, 142, 60, 0.2);
+}
+
+.driver-table button:hover {
+  background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(56, 142, 60, 0.3);
+}
+
+#reload-orders-btn {
+  margin-bottom: 1.5rem;
+  padding: 0.9rem 2rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #42a5f5 0%, #1976d2 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(25, 118, 210, 0.3);
+}
+
+#reload-orders-btn:hover {
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(25, 118, 210, 0.4);
+}

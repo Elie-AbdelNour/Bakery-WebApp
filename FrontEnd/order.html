@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Orders</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/order.css" />
+    <script defer src="/js/order.js"></script>
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div>
+        <h2>Bakery</h2>
+        <small>Fresh orders, every day.</small>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/home">Home (Catalog)</a>
+        <a href="/cart" id="nav-cart">My Cart</a>
+        <a href="/orders" class="active" id="nav-orders">My Orders</a>
+        <a href="/loginPage" id="nav-login" hidden>Login / Register</a>
+      </nav>
+
+      <button id="logout-btn">Logout</button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <h1>📦 My Orders</h1>
+
+      <!-- Global Message -->
+      <div id="global-message" class="message"></div>
+
+      <!-- Orders Filters -->
+      <section class="filters-section">
+        <h3>Filter by Status</h3>
+        <div class="filter-chips">
+          <button class="filter-chip active" data-status="">All Orders</button>
+          <button class="filter-chip" data-status="Pending">⏳ Pending</button>
+          <button class="filter-chip" data-status="Preparing">
+            🍳 Preparing
+          </button>
+          <button class="filter-chip" data-status="Ready">✅ Ready</button>
+          <button class="filter-chip" data-status="On the way">
+            🚗 On the way
+          </button>
+          <button class="filter-chip" data-status="Delivered">
+            🚚 Delivered
+          </button>
+          <button class="filter-chip" data-status="Cancelled">
+            ❌ Cancelled
+          </button>
+        </div>
+      </section>
+
+      <!-- Orders List -->
+      <section class="orders-section">
+        <p id="orders-empty-msg" class="empty-text"></p>
+        <div id="orders-container"></div>
+      </section>
+
+      <!-- Order Details Modal -->
+      <div id="order-modal" class="modal" hidden>
+        <div class="modal-content">
+          <span class="modal-close" id="modal-close">&times;</span>
+          <h2>Order Details</h2>
+          <div id="order-details-content"></div>
+        </div>
+      </div>
+
+      <!-- Product Details Modal (used when clicking a product name) -->
+      <div id="product-modal" class="modal" hidden>
+        <div class="modal-content">
+          <span class="modal-close" id="product-modal-close">&times;</span>
+          <h2 id="product-modal-title">Product</h2>
+          <div id="product-modal-content">Loading...</div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bakery - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div>
+        <h2>Bakery</h2>
+        <small>Fresh orders, every day.</small>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/home" class="active">Home (Catalog)</a>
+
+        <!-- Customer-only links -->
+        <a href="/cart" id="nav-cart" hidden>My Cart</a>
+        <a href="/orders" id="nav-orders" hidden>My Orders</a>
+
+        <!-- Guest-only link -->
+        <a href="/loginPage" id="nav-login">Login / Register</a>
+      </nav>
+
+      <!-- Only shown when logged-in -->
+      <button id="logout-btn" hidden>Logout</button>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <header>
+        <div>
+          <h1>Menu</h1>
+          <p class="note">
+            Browse our products. Guests can view catalog, customers can add to
+            cart.
+          </p>
+        </div>
+        <div id="user-info">Guest</div>
+      </header>
+
+      <!-- Global message -->
+      <div id="global-message" class="message info"></div>
+
+      <!-- Product filters -->
+      <section>
+        <form id="product-filters" class="filters">
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search by name..."
+          />
+
+          <input
+            id="category-input"
+            type="text"
+            placeholder="Category (e.g. Cake)"
+          />
+
+          <input
+            id="min-price-input"
+            type="number"
+            step="0.01"
+            placeholder="Min price"
+          />
+
+          <input
+            id="max-price-input"
+            type="number"
+            step="0.01"
+            placeholder="Max price"
+          />
+
+          <span id="products-page-info"></span>
+        </form>
+      </section>
+
+      <!-- Products + pagination -->
+      <section>
+        <div class="products-header">
+          <strong>Products</strong>
+          <div style="margin-left: auto; display: flex; gap: 6px">
+            <button id="products-prev">&laquo; Prev</button>
+            <button id="products-next">Next &raquo;</button>
+          </div>
+        </div>
+
+        <div id="product-list" class="product-list">
+          <!-- Filled by home.js -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Script -->
+    <script src="/js/home.js"></script>
+  </body>
+</html>

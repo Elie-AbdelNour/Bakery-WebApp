@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Cart</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script defer src="/js/home.js"></script>
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div>
+        <h2>Bakery</h2>
+        <small>Fresh orders, every day.</small>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/home">Home (Catalog)</a>
+        <a href="/cart" class="active" id="nav-cart">My Cart</a>
+        <a href="/orders" id="nav-orders">My Orders</a>
+        <a href="/loginPage" id="nav-login" hidden>Login / Register</a>
+      </nav>
+
+      <button id="logout-btn">Logout</button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <h1>🛒 My Shopping Cart</h1>
+
+      <!-- Global Message -->
+      <div id="global-message" class="message"></div>
+
+      <!-- Cart Empty Message -->
+      <p id="cart-empty-msg" class="empty-text"></p>
+
+      <!-- Cart Grid -->
+      <div id="cart-grid" class="cart-grid"></div>
+
+      <!-- Cart Total -->
+      <h3 id="cart-total"></h3>
+
+      <!-- Cart Buttons -->
+      <div class="cart-actions">
+        <button id="clear-cart-btn" class="btn danger">Clear Cart</button>
+        <button id="place-order-btn" class="btn primary">Place Order</button>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        await loadCurrentUser().catch(() => {});
+
+        // Redirect guests to login page
+        if (!currentUser) {
+          window.location.href = "/loginPage";
+          return;
+        }
+
+        // Logged-in customer → normal cart functionality
+        if (currentUser.role === "customer") {
+          setupRoleVisibility();
+          loadCart();
+          return;
+        }
+
+        // Prevent admin or driver from accessing cart
+        window.location.href = "/home";
+      });
+    </script>
+  </body>
+</html>

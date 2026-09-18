@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Driver Dashboard - Bakery</title>
+  <link rel="stylesheet" href="/css/driver.css" />
+</head>
+<body>
+  <header class="driver-header">
+    <h1>Driver Dashboard</h1>
+    <div class="driver-header-right">
+      <span id="driver-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <main class="driver-main">
+    <section id="message" class="message"></section>
+
+    <section class="driver-section">
+      <h2>Assigned Orders</h2>
+      <button id="reload-orders-btn">Reload Orders</button>
+
+      <table class="driver-table" id="driver-orders-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Customer Email</th>
+            <th>Total Amount</th>
+            <th>Status</th>
+            <th>Created</th>
+            <th>Update Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="/js/driver.js"></script>
+</body>
+</html>

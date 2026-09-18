@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bakery Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body
+    class="bg-gradient-to-br from-orange-100 via-white to-yellow-100 min-h-screen flex items-center justify-center"
+  >
+    <div class="bg-white shadow-xl rounded-2xl p-10 w-full max-w-md">
+      <h1 class="text-3xl font-bold text-center text-orange-600 mb-6">
+        🍞 Bakery Login
+      </h1>
+
+      <!-- Request OTP Form -->
+      <div id="step1">
+        <label class="block mb-2 font-medium">Email Address</label>
+        <input
+          id="email"
+          type="email"
+          class="w-full px-4 py-2 border rounded-lg mb-4 focus:ring-2 ring-orange-400"
+          placeholder="example@gmail.com"
+        />
+
+        <button
+          onclick="requestOtp()"
+          class="w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition"
+        >
+          Send OTP
+        </button>
+        <button
+          onclick="window.location.href='/home'"
+          class="w-full mt-4 text-center text-orange-700 hover:underline font-medium"
+        >
+          Continue as guest
+        </button>
+      </div>
+
+      <!-- Verify OTP Form -->
+      <div id="step2" class="hidden mt-6">
+        <label class="block mb-2 font-medium">Enter OTP</label>
+        <input
+          id="otp"
+          type="text"
+          class="w-full px-4 py-2 border rounded-lg mb-4 focus:ring-2 ring-orange-400"
+          placeholder="Enter the OTP you received"
+        />
+
+        <button
+          onclick="verifyOtp()"
+          class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition"
+        >
+          Login
+        </button>
+
+        <button
+          onclick="goBackToEmail()"
+          class="w-full mt-3 bg-gray-200 text-gray-700 py-2 rounded-lg hover:bg-gray-300 transition"
+        >
+          ← Back to Email
+        </button>
+      </div>
+
+      <p id="message" class="text-center mt-4 text-red-600 font-medium"></p>
+    </div>
+    <script src="js/login.js"></script>
+  </body>
+</html>

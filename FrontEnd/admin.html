@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard - Bakery</title>
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+  <body>
+    <header class="admin-header">
+      <div class="header-left">
+        <span class="header-icon">🎂</span>
+        <h1>Bakery Admin Dashboard</h1>
+      </div>
+      <div class="admin-header-right">
+        <span id="admin-email">👤</span>
+        <button id="logout-btn">🚪 Logout</button>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <nav class="admin-nav">
+        <button class="tab-btn active" data-target="products-section">
+          <span class="tab-icon">🥖</span>
+          <span>Products</span>
+        </button>
+        <button class="tab-btn" data-target="orders-section">
+          <span class="tab-icon">📦</span>
+          <span>Orders</span>
+        </button>
+        <button class="tab-btn" data-target="users-section">
+          <span class="tab-icon">👥</span>
+          <span>Users & Drivers</span>
+        </button>
+      </nav>
+
+      <section id="message" class="message"></section>
+
+      <!-- PRODUCTS SECTION -->
+      <section id="products-section" class="admin-section active">
+        <div class="section-header">
+          <h2>🥖 Products Management</h2>
+          <p class="section-subtitle">
+            Manage your bakery's delicious products
+          </p>
+        </div>
+
+        <form id="product-form" class="admin-form">
+          <input type="hidden" id="product-id" />
+          <div class="form-row">
+            <label>Name</label>
+            <input type="text" id="product-name" required />
+          </div>
+          <div class="form-row">
+            <label>Description</label>
+            <textarea id="product-description"></textarea>
+          </div>
+          <div class="form-row">
+            <label>Price</label>
+            <input type="number" id="product-price" step="0.01" required />
+          </div>
+          <div class="form-row">
+            <label>Stock</label>
+            <input type="number" id="product-stock" required />
+          </div>
+          <div class="form-row">
+            <label>Category</label>
+            <input type="text" id="product-category" />
+          </div>
+          <div class="form-row">
+            <label>Product Image</label>
+            <input type="file" id="product-image" accept="image/*" />
+            <small
+              id="current-image-info"
+              style="color: #8d6e63; margin-top: 0.5rem; display: none"
+            ></small>
+          </div>
+          <div class="form-actions">
+            <button type="submit" id="product-save-btn">Save Product</button>
+            <button type="button" id="product-reset-btn">Reset</button>
+          </div>
+        </form>
+
+        <h3>All Products</h3>
+        <table class="admin-table" id="products-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Category</th>
+              <th>Image</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- ORDERS SECTION -->
+      <section id="orders-section" class="admin-section">
+        <div class="section-header">
+          <h2>📦 Orders Management</h2>
+          <p class="section-subtitle">Track and manage customer orders</p>
+        </div>
+
+        <div class="filters">
+          <label>
+            Status:
+            <select id="order-status-filter">
+              <option value="">All</option>
+              <option value="Pending">Pending</option>
+              <option value="Preparing">Preparing</option>
+              <option value="Ready">Ready</option>
+              <option value="Delivered">Delivered</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+          </label>
+          <button id="reload-orders-btn">Reload Orders</button>
+        </div>
+
+        <table class="admin-table" id="orders-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>User ID</th>
+              <th>Driver ID</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Created</th>
+              <th>Change Status</th>
+              <th>Assign Driver</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- USERS & DRIVERS SECTION -->
+      <section id="users-section" class="admin-section">
+        <div class="section-header">
+          <h2>👥 Users & Drivers</h2>
+          <p class="section-subtitle">Manage users and delivery drivers</p>
+        </div>
+
+        <h3>Create Driver by Email</h3>
+        <form id="create-driver-form" class="admin-form small">
+          <div class="form-row">
+            <label>Email</label>
+            <input type="email" id="driver-email" required />
+          </div>
+          <div class="form-actions">
+            <button type="submit">Create Driver</button>
+          </div>
+        </form>
+
+        <h3>All Users</h3>
+        <table class="admin-table" id="users-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Created</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <h3>Drivers</h3>
+        <table class="admin-table" id="drivers-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Created</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="/js/admin.js"></script>
+  </body>
+</html>
